@@ -33,7 +33,7 @@ services:
     restart: unless-stopped
     environment:
       TZ: ${TZ:-America/Chicago}
-      SITE_URL: ${SITE_URL:-}
+      SITE_URL: ${SITE_URL:-https://capes.ecnet.cloud}
     volumes:
       - ./:/repo:ro
       - notifier-data:/data   # webhook subscriptions: secrets, kept out of the repo and site/

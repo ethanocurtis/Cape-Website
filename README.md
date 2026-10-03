@@ -48,7 +48,7 @@ docker compose pull && docker compose up -d --build           # update the image
 The Pi only needs to expose plain HTTP on your LAN. NPM handles the public domain and SSL.
 
 1. In NPM, go to **Hosts → Proxy Hosts → Add Proxy Host**.
-2. **Domain Names:** e.g. `capes.yourdomain.com`
+2. **Domain Names:** e.g. `capes.ecnet.cloud`
 3. **Scheme:** `http` · **Forward Hostname / IP:** your Pi's LAN IP (e.g. `192.168.1.50`) · **Forward Port:** `8080` (or your `WEB_PORT`)
 4. Turn on **Block Common Exploits**. Websockets are not needed.
 5. On the **SSL** tab, request a Let's Encrypt certificate and turn on **Force SSL** and **HTTP/2**.
