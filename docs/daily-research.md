@@ -31,7 +31,13 @@ Today's date is in your environment. Check for **new capes** and **changes to tr
   - Add the cape's wiki name to `reviewedWikiCapes`.
 - **New cape that is already closed, or was closed more than 2 months ago:** just add its wiki name to `reviewedWikiCapes`. Add a short entry only if it closed less than 2 months ago.
 - **Existing capes:** update dates, alerts (e.g. "Twitch codes ran out") and city lists when sources change. Remove alerts that are no longer true.
-- Don't delete old entries. The page hides capes 2 months after they close.
+- **Remove expired capes:** delete a cape's entry when all of these are true:
+  - It isn't `always: true`.
+  - None of its `earn` windows or `locations` are open, upcoming or `tba`.
+  - Its last earn window or venue date ended more than `hideAfterMonths` (2) months ago, which is when the page stops showing it.
+  - Any `redeem` deadline has also passed.
+
+  Before deleting, make sure its wiki name is in `reviewedWikiCapes`, so it isn't flagged as new again. Then remove any keys in the top-level `sources` map that no other cape uses any more. If an expired cape comes back, add it again as a new entry.
 - Keep the writing plain, short and neutral. Don't invent details. If a requirement or date is unannounced, say "TBA" in a note rather than guessing.
 
 ## 3. Validate

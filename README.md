@@ -56,7 +56,7 @@ Give the Pi a DHCP reservation so the forward IP doesn't change. If NPM's VM and
 
 ### How it stays up to date
 
-1. **Research (cloud, daily ~3:47 AM Central):** a scheduled Claude routine checks Minecraft.net, the Minecraft Help Center, minecraftexperience.com and the Minecraft Wiki for new capes and changed dates. It updates `site/data/capes.json` and pushes the changes straight to `main`. Your computer does not need to be on.
+1. **Research (cloud, daily ~3:47 AM Central):** a scheduled Claude routine checks Minecraft.net, the Minecraft Help Center, minecraftexperience.com and the Minecraft Wiki for new capes and changed dates. It updates `site/data/capes.json`, removes capes that closed more than 2 months ago, and pushes the changes straight to `main`. Your computer does not need to be on.
 2. **Deploy (Pi, daily at `UPDATE_TIME`, default 5:00 AM Central):** the updater container fast-forwards the checkout to GitHub `main` over HTTPS. Because the repo is public, no keys are needed. Changes to `site/` go live immediately because nginx serves the folder directly. If `updater/update.py` itself changed, the updater restarts with the new version.
 3. **Checks (Pi, same run):** it reads Minecraft.net news and the wiki's cape list. A cape that `capes.json` doesn't cover yet gets a **"New cape spotted"** banner until the next research run adds it.
 
