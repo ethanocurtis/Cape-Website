@@ -61,11 +61,6 @@
       "publisher": "Minecraft.net",
       "url": "https://www.minecraft.net/en-us/redeem"
     },
-    "mcnet-help-java-capes": {
-      "title": "Get Minecraft: Java Edition Capes Before Promotion End Dates",
-      "publisher": "Minecraft Help Center",
-      "url": "https://help.minecraft.net/hc/en-us/articles/31550001045773-Get-Minecraft-Java-Edition-Capes-before-Promotion-End-Dates"
-    },
     "mcnet-exp-terms": {
       "title": "Experience Mod – Minecraft Experience Promotion Terms and Conditions",
       "publisher": "Minecraft Help Center",
@@ -137,31 +132,6 @@
       "title": "Pan Cape",
       "publisher": "Minecraft Wiki",
       "url": "https://minecraft.wiki/w/Pan_Cape"
-    },
-    "wiki-builder": {
-      "title": "Builder Cape",
-      "publisher": "Minecraft Wiki",
-      "url": "https://minecraft.wiki/w/Builder_Cape"
-    },
-    "wiki-crafter": {
-      "title": "Crafter Cape",
-      "publisher": "Minecraft Wiki",
-      "url": "https://minecraft.wiki/w/Crafter_Cape"
-    },
-    "wiki-common": {
-      "title": "Common Cape",
-      "publisher": "Minecraft Wiki",
-      "url": "https://minecraft.wiki/w/Common_Cape"
-    },
-    "wiki-zombie-horse": {
-      "title": "Zombie Horse Cape",
-      "publisher": "Minecraft Wiki",
-      "url": "https://minecraft.wiki/w/Zombie_Horse_Cape"
-    },
-    "wiki-copper": {
-      "title": "Copper Cape",
-      "publisher": "Minecraft Wiki",
-      "url": "https://minecraft.wiki/w/Copper_Cape"
     }
   },
   "capes": [
@@ -556,165 +526,6 @@
       "sources": [
         "wiki-pan",
         "wiki-cape"
-      ]
-    },
-    {
-      "id": "builder",
-      "names": {
-        "java": "Builder Cape",
-        "bedrock": "Builder Cape"
-      },
-      "editions": [
-        "java",
-        "bedrock"
-      ],
-      "category": "Limited-time event · TwitchCon 2026 / Movie Build Challenge",
-      "texture": "2c579968c64c1719740fd8c2a451461879b238002574fce48f7d1a7c36a1c7d4",
-      "wiki": "Builder_Cape",
-      "appearance": "An iron pickaxe lying on a crafting table.",
-      "windows": [
-        {
-          "role": "earn",
-          "label": "Watch Twitch/TikTok streams",
-          "start": "2026-05-30",
-          "end": "2026-06-22",
-          "dateOnly": true
-        },
-        {
-          "role": "redeem",
-          "label": "Redeem codes by",
-          "end": "2026-06-30",
-          "dateOnly": true
-        }
-      ],
-      "steps": [
-        "Watch any Twitch stream for 5 minutes or any TikTok live for 3 minutes during the promotion, then redeem the code."
-      ],
-      "links": [],
-      "sources": [
-        "wiki-builder"
-      ]
-    },
-    {
-      "id": "crafter",
-      "names": {
-        "java": "Crafter Cape",
-        "bedrock": "Crafter Cape"
-      },
-      "editions": [
-        "java",
-        "bedrock"
-      ],
-      "category": "In-person event · TwitchCon Rotterdam 2026",
-      "texture": "479eacefa3cdd7aca94207f36c0dd449653ddf259daf40544a5866baf05eee22",
-      "wiki": "Crafter_Cape",
-      "appearance": "An iron pickaxe on a crafting table (mirrored Builder Cape design).",
-      "windows": [
-        {
-          "role": "earn",
-          "label": "TwitchCon Rotterdam",
-          "start": "2026-05-30",
-          "end": "2026-05-31",
-          "dateOnly": true
-        }
-      ],
-      "steps": [
-        "Collect three emerald stickers at TwitchCon Rotterdam and trade them at the Cape Trader booth for a code."
-      ],
-      "links": [],
-      "sources": [
-        "wiki-crafter"
-      ]
-    },
-    {
-      "id": "common",
-      "names": {
-        "java": "Common Cape",
-        "bedrock": "Common Cape"
-      },
-      "editions": [
-        "java",
-        "bedrock"
-      ],
-      "category": "Ownership cape",
-      "texture": "5ec930cdd2629c8771655c60eebeb867b4b6559b0e6d3bc71c40c96347fa03f0",
-      "wiki": "Common_Cape",
-      "appearance": "A grass block: green on top with a brown, speckled dirt base.",
-      "windows": [
-        {
-          "role": "earn",
-          "label": "Log into Bedrock with a Microsoft account",
-          "start": "2025-05-06",
-          "end": "2026-05-05",
-          "dateOnly": true
-        }
-      ],
-      "steps": [
-        "Log into Bedrock Edition with a Microsoft account during the distribution period."
-      ],
-      "links": [],
-      "sources": [
-        "wiki-common"
-      ]
-    },
-    {
-      "id": "zombie-horse",
-      "names": {
-        "java": "Zombie Horse Cape",
-        "bedrock": "Zombie Horse Cape"
-      },
-      "editions": [
-        "java",
-        "bedrock"
-      ],
-      "category": "Limited-time event · Mounts of Mayhem",
-      "texture": "a3f6e4f14801f3ea55e3d95b9b4ef3b5e8802d947f669de93d6ec4b9354a436b",
-      "wiki": "Zombie_Horse_Cape",
-      "appearance": "The pelt of a zombie horse with partially exposed bones.",
-      "windows": [
-        {
-          "role": "earn",
-          "label": "Spear Mayhem challenge",
-          "start": "2025-12-12T16:00:00Z",
-          "end": "2025-12-15T18:00:00Z"
-        }
-      ],
-      "steps": [
-        "Defeat 5 mobs with a spear in Survival on Bedrock during the challenge."
-      ],
-      "links": [],
-      "sources": [
-        "wiki-zombie-horse"
-      ]
-    },
-    {
-      "id": "copper",
-      "names": {
-        "java": "Copper Cape",
-        "bedrock": "Copper Cape"
-      },
-      "editions": [
-        "java",
-        "bedrock"
-      ],
-      "category": "Limited-time event · The Copper Age",
-      "texture": "5e6f3193e74cd16cdd6637d9bae5484e3a37ff2a14c2d157c659a07810b1bdca",
-      "wiki": "Copper_Cape",
-      "appearance": "A chiseled-copper pattern that oxidizes from top to bottom.",
-      "windows": [
-        {
-          "role": "earn",
-          "label": "Copper Cape Quest",
-          "start": "2025-10-13T15:00:00Z",
-          "end": "2025-10-20T17:00:00Z"
-        }
-      ],
-      "steps": [
-        "Place a copper golem statue on Bedrock, or watch a rewards-enabled stream during the quest."
-      ],
-      "links": [],
-      "sources": [
-        "wiki-copper"
       ]
     }
   ],
