@@ -17,7 +17,7 @@
         All times are in <strong>US Central Time</strong> (<span id="tz-abbr">CST/CDT</span>).
         <span class="dot">·</span> Last checked: <span id="last-checked">—</span>
       </p>
-      <p class="header-actions"><button type="button" class="btn" id="alerts-open">Get Discord alerts</button></p>
+      <p class="header-actions"><button type="button" class="btn" id="alerts-open">Get alerts</button></p>
     </div>
   </header>
 
@@ -58,13 +58,25 @@
   <dialog id="alerts-dialog" aria-labelledby="alerts-title">
     <form id="alerts-form" method="dialog" novalidate>
       <div class="dlg-head">
-        <h2 id="alerts-title">Discord alerts</h2>
+        <h2 id="alerts-title">Cape alerts</h2>
         <button type="button" class="icon-btn" id="alerts-close" aria-label="Close">×</button>
       </div>
-      <p class="muted small">Get a message in your Discord server when capes are added, open, or are about to end.</p>
+      <p class="muted small">Get a message when capes are added, open, or are about to end.</p>
 
+      <div class="seg" id="alerts-channel" role="radiogroup" aria-label="Send alerts to" hidden>
+        <button type="button" role="radio" aria-checked="true" data-channel="discord">Discord</button>
+        <button type="button" role="radio" aria-checked="false" data-channel="email">Email</button>
+      </div>
+
+      <div id="f-email" hidden>
+        <label for="email-addr" class="field-label">Email address</label>
+        <input id="email-addr" class="text-in" name="email" type="email" autocomplete="email" spellcheck="false" placeholder="you@example.com">
+        <p class="muted small hint">We'll email you a link to confirm. Every alert has an unsubscribe link.</p>
+      </div>
+
+      <div id="f-discord">
       <label for="hook-url" class="field-label">Webhook URL</label>
-      <input id="hook-url" name="url" type="url" inputmode="url" autocomplete="off" spellcheck="false"
+      <input id="hook-url" class="text-in" name="url" type="url" inputmode="url" autocomplete="off" spellcheck="false"
              placeholder="https://discord.com/api/webhooks/…" required>
       <details class="how">
         <summary>How do I get a webhook URL?</summary>
@@ -75,6 +87,7 @@
         </ol>
         <p>Keep the URL private: anyone who has it can post in that channel.</p>
       </details>
+      </div>
 
       <fieldset>
         <legend>Alert me when</legend>
@@ -96,7 +109,7 @@
         <button type="submit" class="btn" id="alerts-submit">Subscribe</button>
         <button type="button" class="btn ghost" id="alerts-unsub">Unsubscribe</button>
       </div>
-      <p class="muted small">Already subscribed? Submit the same URL again to change your options.</p>
+      <p class="muted small" id="alerts-foot">Already subscribed? Submit the same URL again to change your options.</p>
     </form>
   </dialog>
 

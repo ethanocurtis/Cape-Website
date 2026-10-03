@@ -33,7 +33,7 @@ The site is now at `http://<pi-ip>:8080`.
 |-----------|--------------|
 | `web`     | `nginx:alpine`. Serves `./site` read-only on `WEB_PORT` (default 8080). |
 | `updater` | `python:3.12-alpine`. Runs `updater/update.py` at startup, then every day at `UPDATE_TIME` (default 05:00 America/Chicago). |
-| `notifier` | `python:3.12-alpine`. Serves the Discord alert sign-up API at `/api/` (through `web`) and sends alerts. See [Discord alerts](#discord-alerts). |
+| `notifier` | `python:3.12-alpine`. Serves the alert sign-up API at `/api/` (through `web`) and sends Discord and email alerts. See [Alerts](#alerts-discord-and-email). |
 
 Useful commands:
 
@@ -66,9 +66,9 @@ Notes:
 - Changes to `docker-compose.yml` or `docker/` need a manual `docker compose up -d --build` on the Pi.
 - Set `GIT_PULL=0` in `.env` to turn off automatic pulls.
 
-## Discord alerts
+## Alerts (Discord and email)
 
-Visitors click **Get Discord alerts**, paste a Discord channel webhook URL, and choose what they want:
+Visitors click **Get alerts**, then either paste a Discord channel webhook URL or enter an email address, and choose what they want:
 
 | Alert | When it's sent |
 |-------|----------------|
@@ -77,14 +77,34 @@ Visitors click **Get Discord alerts**, paste a Discord channel webhook URL, and 
 | Ending soon | About 24 hours before a cape can no longer be earned, or before a code-redemption deadline. |
 | Dates changed | A date moves, a venue city is added, or a new warning (e.g. "codes ran out") is posted. |
 
-They can also pick Java, Bedrock or both. On subscribe, the notifier posts a test message, so a wrong URL fails right away. Submitting the same URL again changes the options, and **Unsubscribe** removes it. If someone deletes the webhook in Discord, it is removed automatically on the next alert.
+They can also pick Java, Bedrock or both.
+
+- **Discord:** on subscribe, the notifier posts a test message, so a wrong URL fails right away. Submitting the same URL again changes the options, and **Unsubscribe** removes it. If someone deletes the webhook in Discord, it is removed automatically on the next alert.
+- **Email:** double opt-in. Signing up sends a confirmation link (valid 48 hours), and nothing else is sent until it's clicked. Signing up again with new choices sends a new link that saves them. Every alert email has an unsubscribe link and one-click unsubscribe headers (`List-Unsubscribe`), which Gmail and Yahoo require. Alerts from the same check are combined into one email. Times are shown in US Central.
 
 - The notifier re-reads `capes.json` every 5 minutes, so alerts go out shortly after the Pi pulls the daily update. On its first start it only records the current state and sends nothing.
 - Discord timestamps show in each reader's own time zone.
 - Set `SITE_URL` in `.env` to your public address so alerts link to the cape on the site.
-- Subscriptions are stored in the `notifier-data` Docker volume, not in the repo or under `site/`, because webhook URLs let anyone post to that channel.
-- Limits: 10 API requests a minute per visitor (nginx), 5 new webhooks a day per IP, and 2,000 subscriptions in total (`MAX_SUBSCRIPTIONS`).
+- Subscriptions are stored in the `notifier-data` Docker volume, not in the repo or under `site/`, because webhook URLs let anyone post to that channel and email addresses are personal data.
+- Limits: 10 API requests a minute per visitor (nginx), 5 new sign-ups a day per IP, one confirmation email per address every 10 minutes, 2,000 webhooks (`MAX_SUBSCRIPTIONS`) and 5,000 email subscribers (`MAX_EMAIL_SUBSCRIBERS`).
 - Logs: `docker compose logs -f notifier`. Changes to `notifier/notifier.py` pulled from GitHub are picked up automatically within 5 minutes.
+
+### Setting up email
+
+Email is off until `SMTP_HOST`, `SMTP_FROM` and `SITE_URL` are set in `.env`; until then the form only offers Discord. A home internet connection can't deliver email reliably on its own, so use an SMTP relay:
+
+| Provider | `SMTP_HOST` | Port / `SMTP_SECURITY` | Notes |
+|----------|-------------|------------------------|-------|
+| Brevo | `smtp-relay.brevo.com` | 587 / `starttls` | Free tier: 300 emails a day. |
+| Mailgun | `smtp.mailgun.org` | 587 / `starttls` | |
+| Amazon SES | `email-smtp.<region>.amazonaws.com` | 587 / `starttls` | Cheapest at volume. |
+| Gmail / Google Workspace | `smtp.gmail.com` | 587 / `starttls` | Needs an app password. About 500 emails a day. |
+
+Then:
+
+1. Verify your sending domain with the provider and add the SPF, DKIM and DMARC DNS records it gives you. Without them, alerts go to spam.
+2. Fill in the `SMTP_*` lines in `.env`, e.g. `SMTP_FROM=Cape Tracker <alerts@yourdomain.com>`.
+3. Run `docker compose up -d`. The notifier log says `email on` when it's ready.
 
 ## Editing `capes.json`
 

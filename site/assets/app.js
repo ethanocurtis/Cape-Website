@@ -395,6 +395,8 @@
     var form = document.getElementById("alerts-form");
     var msg = document.getElementById("alerts-msg");
     var buttons = form.querySelectorAll(".dlg-actions .btn");
+    var channel = "discord";
+    var EMAIL = /^[^@\s<>"',;]+@[^@\s.]+(\.[^@\s.]+)+$/;
     var HOOK = /^https:\/\/((ptb|canary)\.)?discord(app)?\.com\/api(\/v\d+)?\/webhooks\/\d+\/[\w-]+\/?$/;
 
     function show(text, ok) {
@@ -405,12 +407,31 @@
     function checked(name) {
       return Array.prototype.map.call(form.querySelectorAll('input[name="' + name + '"]:checked'), function (i) { return i.value; });
     }
+    function setChannel(c) {
+      channel = c;
+      document.querySelectorAll("#alerts-channel button").forEach(function (b) {
+        b.setAttribute("aria-checked", b.dataset.channel === c ? "true" : "false");
+      });
+      document.getElementById("f-discord").hidden = c !== "discord";
+      document.getElementById("f-email").hidden = c !== "email";
+      document.getElementById("alerts-unsub").hidden = c !== "discord";
+      document.getElementById("alerts-foot").textContent = c === "discord"
+        ? "Already subscribed? Submit the same URL again to change your options."
+        : "Already subscribed? Sign up again with new choices and confirm the email to change them.";
+      msg.hidden = true;
+    }
     function send(path, body) {
-      var url = form.url.value.trim();
-      if (!HOOK.test(url)) { show("That doesn't look like a Discord webhook URL. It should start with https://discord.com/api/webhooks/", false); return; }
-      body.url = url;
+      if (channel === "email") {
+        var email = form.email.value.trim();
+        if (!EMAIL.test(email)) { show("That doesn't look like an email address.", false); return; }
+        body.email = email;
+      } else {
+        var url = form.url.value.trim();
+        if (!HOOK.test(url)) { show("That doesn't look like a Discord webhook URL. It should start with https://discord.com/api/webhooks/", false); return; }
+        body.url = url;
+      }
       buttons.forEach(function (b) { b.disabled = true; });
-      show("Contacting Discord…", true);
+      show(channel === "email" ? "Sending confirmation email…" : "Contacting Discord…", true);
       fetch(path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
         .then(function (r) {
           return r.json().catch(function () {
@@ -421,6 +442,15 @@
         .catch(function () { show("Couldn't reach the server. Check your connection and try again.", false); })
         .then(function () { buttons.forEach(function (b) { b.disabled = false; }); });
     }
+
+    // Only offer email when the server has it set up.
+    fetch("api/config", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : {}; })
+      .then(function (cfg) { if (cfg.email) document.getElementById("alerts-channel").hidden = false; })
+      .catch(function () {});
+    document.querySelectorAll("#alerts-channel button").forEach(function (b) {
+      b.addEventListener("click", function () { setChannel(b.dataset.channel); });
+    });
 
     document.getElementById("alerts-open").addEventListener("click", function () {
       msg.hidden = true;
@@ -433,7 +463,7 @@
       var events = checked("events"), editions = checked("editions");
       if (!events.length) return show("Pick at least one kind of alert.", false);
       if (!editions.length) return show("Pick at least one edition.", false);
-      send("api/subscribe", { events: events, editions: editions });
+      send(channel === "email" ? "api/email/subscribe" : "api/subscribe", { events: events, editions: editions });
     });
     document.getElementById("alerts-unsub").addEventListener("click", function () { send("api/unsubscribe", {}); });
   })();

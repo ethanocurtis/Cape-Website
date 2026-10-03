@@ -34,6 +34,13 @@ services:
     environment:
       TZ: ${TZ:-America/Chicago}
       SITE_URL: ${SITE_URL:-}
+      # Email alerts (optional): off unless SMTP_HOST, SMTP_FROM and SITE_URL are set
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_SECURITY: ${SMTP_SECURITY:-starttls}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-}
     volumes:
       - ./:/repo:ro
       - notifier-data:/data   # webhook subscriptions: secrets, kept out of the repo and site/

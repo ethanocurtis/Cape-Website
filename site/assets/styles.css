@@ -41,6 +41,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
@@ -207,11 +208,11 @@ dialog#alerts-dialog::backdrop { background: rgba(0,0,0,.45); }
   background: none; border: 0; color: var(--muted); padding: 2px 8px; border-radius: 6px;
 }
 .field-label { display: block; font-weight: 600; font-size: .9rem; margin: 14px 0 6px; }
-#hook-url {
+.text-in {
   width: 100%; font: inherit; font-size: .95rem; padding: 9px 12px;
   border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text);
 }
-#hook-url:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
+.text-in:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
 details.how { margin: 8px 0 0; font-size: .88rem; color: var(--muted); }
 details.how summary { cursor: pointer; }
 details.how ol { padding-left: 1.3em; margin: 6px 0; }
@@ -224,3 +225,11 @@ dialog legend { font-weight: 600; font-size: .9rem; padding: 0; margin-bottom: 4
 .form-msg.ok { background: var(--live-bg); color: var(--live); }
 .form-msg.err { background: var(--ended-bg); color: var(--ended); }
 .dlg-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 8px; }
+.seg { display: inline-flex; margin: 14px 0 0; padding: 3px; border-radius: 999px; background: var(--surface-2); }
+.seg button {
+  font: inherit; font-weight: 600; font-size: .9rem; cursor: pointer;
+  border: 0; border-radius: 999px; padding: 6px 16px; background: transparent; color: var(--muted);
+}
+.seg button[aria-checked="true"] { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.15); }
+.seg button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.hint { margin: 6px 0 0; }
