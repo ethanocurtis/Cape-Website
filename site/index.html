@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minecraft Cape Tracker</title>
+  <meta name="description" content="Every Minecraft cape you can earn right now: how to get each one, deadlines in US Central Time, stream links and sources. Updated daily.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 16'%3E%3Crect width='10' height='16' fill='%235b8c3a'/%3E%3Crect y='11' width='10' height='5' fill='%23866043'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Minecraft Cape Tracker</h1>
+      <p class="lede">Every cape you can still earn, how to get it, and when each one ends.</p>
+      <p class="meta">
+        All times are in <strong>US Central Time</strong> (<span id="tz-abbr">CST/CDT</span>).
+        <span class="dot">·</span> Last checked: <span id="last-checked">—</span>
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="alerts"></div>
+
+    <nav class="tabs" role="tablist" aria-label="Edition">
+      <button role="tab" id="tab-java" aria-controls="panel" aria-selected="true" data-edition="java">Java Edition</button>
+      <button role="tab" id="tab-bedrock" aria-controls="panel" aria-selected="false" data-edition="bedrock">Bedrock Edition</button>
+    </nav>
+
+    <section id="panel" role="tabpanel" aria-live="polite"></section>
+
+    <section class="panel-block" id="watch">
+      <h2>Streams &amp; quick links</h2>
+      <ul class="chips" id="watch-links"></ul>
+    </section>
+
+    <section class="panel-block" id="news-block" hidden>
+      <h2>Latest from Minecraft.net</h2>
+      <ul class="news" id="news"></ul>
+    </section>
+
+    <section class="panel-block" id="sources-block">
+      <h2>Sources</h2>
+      <p class="muted small">If sources give different times, this page uses Minecraft.net.</p>
+      <ol class="sources" id="sources"></ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap small muted">
+      <p>Capes that closed more than 2 months ago are hidden automatically. <span id="hidden-count"></span></p>
+      <p>A fan-made tracker. Not affiliated with Mojang Studios or Microsoft. Cape textures are loaded from Mojang's texture server.</p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

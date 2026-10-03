@@ -1,0 +1,747 @@
+{
+  "curatedOn": "2026-10-03",
+  "hideAfterMonths": 2,
+  "reviewedWikiCapes": [
+    "Classic Mojang Cape",
+    "Millionth Customer Cape",
+    "dB Cape",
+    "Snowman Cape",
+    "MINECON 2011 Cape",
+    "Translator Cape",
+    "MINECON 2012 Cape",
+    "cheapsh0t's Cape",
+    "MINECON 2013 Cape",
+    "Scrolls Champion Cape",
+    "Moderator Cape",
+    "Spade Cape",
+    "Chinese Translator Cape",
+    "MINECON 2015 Cape",
+    "Mojang Cape",
+    "Realms MapMaker Cape",
+    "Cobalt Cape",
+    "Prismarine Cape",
+    "MINECON 2016 Cape",
+    "Turtle Cape",
+    "Founder's Cape",
+    "Pan Cape",
+    "Birthday Cape",
+    "Migrator Cape",
+    "Mojang Studios Cape",
+    "Vanilla Cape",
+    "Progress Pride Cape",
+    "Cherry Blossom Cape",
+    "Purple Heart Cape",
+    "15th Anniversary Cape",
+    "Follower's Cape",
+    "MCC 15th Year Cape",
+    "Minecraft Experience Cape",
+    "Mojang Office Cape",
+    "Home Cape",
+    "Menace Cape",
+    "Yearn Cape",
+    "Common Cape",
+    "Copper Cape",
+    "Zombie Horse Cape",
+    "Moonlight Trail Cape",
+    "Crafter Cape",
+    "Builder Cape",
+    "Aurora Cape",
+    "Hero Cape",
+    "Twisted Cape"
+  ],
+  "sources": {
+    "mcnet-mcd2": {
+      "title": "Minecraft Dungeons II Capes & Promos",
+      "publisher": "Minecraft.net",
+      "date": "2026-08-27 (updated 2026-09-29)",
+      "url": "https://www.minecraft.net/en-us/article/minecraft-dungeons-ii-capes-promos"
+    },
+    "mcnet-redeem": {
+      "title": "Redeem Minecraft Codes, Gift Cards, and Prepaid Cards",
+      "publisher": "Minecraft.net",
+      "url": "https://www.minecraft.net/en-us/redeem"
+    },
+    "mcnet-help-java-capes": {
+      "title": "Get Minecraft: Java Edition Capes Before Promotion End Dates",
+      "publisher": "Minecraft Help Center",
+      "url": "https://help.minecraft.net/hc/en-us/articles/31550001045773-Get-Minecraft-Java-Edition-Capes-before-Promotion-End-Dates"
+    },
+    "mcnet-exp-terms": {
+      "title": "Experience Mod – Minecraft Experience Promotion Terms and Conditions",
+      "publisher": "Minecraft Help Center",
+      "url": "https://help.minecraft.net/hc/en-us/articles/31114589569805-Experience-Mod-Minecraft-Experience-Promotion-Terms-and-Conditions"
+    },
+    "x-aurora": {
+      "title": "@Minecraft: Aurora Cape announcement",
+      "publisher": "X (Twitter)",
+      "date": "2026-09-28",
+      "url": "https://x.com/Minecraft/status/2104619064916345197"
+    },
+    "bsky-refund": {
+      "title": "Marc Watson (Mojang): refunding Dungeons II revokes its capes",
+      "publisher": "Bluesky",
+      "date": "2026-09-24",
+      "url": "https://bsky.app/profile/marc-irl.bsky.social/post/3mwbxlsgqd22p"
+    },
+    "mce-home": {
+      "title": "Minecraft Experience – tour locations",
+      "publisher": "minecraftexperience.com",
+      "url": "https://www.minecraftexperience.com/"
+    },
+    "ticketmaster-cl": {
+      "title": "Minecraft Experience Moonlight Trail (Santiago)",
+      "publisher": "Ticketmaster Chile",
+      "url": "https://www.ticketmaster.cl/event/minecraft-experience-chile"
+    },
+    "wiki-cape": {
+      "title": "Cape",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Cape"
+    },
+    "wiki-aurora": {
+      "title": "Aurora Cape",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Aurora_Cape"
+    },
+    "wiki-hero": {
+      "title": "Hero Cape",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Hero_Cape"
+    },
+    "wiki-twisted": {
+      "title": "Twisted Cape",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Twisted_Cape"
+    },
+    "wiki-experience-cape": {
+      "title": "Minecraft Experience Cape",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Minecraft_Experience_Cape"
+    },
+    "wiki-villager-rescue": {
+      "title": "Minecraft Experience: Villager Rescue (times & locations)",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Minecraft_Experience:_Villager_Rescue"
+    },
+    "wiki-moonlight-cape": {
+      "title": "Moonlight Trail Cape",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Moonlight_Trail_Cape"
+    },
+    "wiki-moonlight-trail": {
+      "title": "Minecraft Experience: Moonlight Trail (times & locations)",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Minecraft_Experience:_Moonlight_Trail"
+    },
+    "wiki-pan": {
+      "title": "Pan Cape",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Pan_Cape"
+    },
+    "wiki-builder": {
+      "title": "Builder Cape",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Builder_Cape"
+    },
+    "wiki-crafter": {
+      "title": "Crafter Cape",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Crafter_Cape"
+    },
+    "wiki-common": {
+      "title": "Common Cape",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Common_Cape"
+    },
+    "wiki-zombie-horse": {
+      "title": "Zombie Horse Cape",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Zombie_Horse_Cape"
+    },
+    "wiki-copper": {
+      "title": "Copper Cape",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Copper_Cape"
+    }
+  },
+  "capes": [
+    {
+      "id": "aurora",
+      "names": {
+        "java": "Aurora Cape",
+        "bedrock": "Aurora Cape"
+      },
+      "editions": [
+        "java",
+        "bedrock"
+      ],
+      "category": "Limited-time event · Minecraft Dungeons II launch",
+      "texture": "7c418dfbd37412a55e9f1425c9807a591ad10cf71b1edb576a587be9114c277f",
+      "wiki": "Aurora_Cape",
+      "appearance": "A blue-orange-yellow gradient inspired by the sky of the Sift (the new dimension in Minecraft Dungeons II), dotted with small white stars. The elytra version has pointed edges with a pale white-and-green outline.",
+      "windows": [
+        {
+          "role": "earn",
+          "label": "Watch-time promotion",
+          "start": "2026-09-29T16:00:00Z",
+          "end": "2026-10-15T06:59:00Z"
+        },
+        {
+          "role": "redeem",
+          "label": "Redeem your code by",
+          "end": "2026-10-31",
+          "dateOnly": true
+        }
+      ],
+      "steps": [
+        "Pick <b>one</b> platform. On <b>Twitch</b>, link your Twitch account and watch any rewards-enabled stream in the <i>Minecraft Dungeons II</i> category for <b>15 minutes</b>. On <b>TikTok</b> (mobile app only), watch any <i>Minecraft Dungeons II</i> live stream with Game Rewards enabled for <b>3 minutes</b>.",
+        "Watch time only counts while the stream is live.",
+        "Your 5×5 code shows up in your <b>Twitch Drops inventory</b> or in your <b>TikTok notifications</b>.",
+        "Redeem the code at <a href=\"https://www.minecraft.net/en-us/redeem\" target=\"_blank\" rel=\"noopener\">minecraft.net/redeem</a> with the Microsoft account you play Minecraft on. The cape unlocks on both Java and Bedrock.",
+        "You can redeem one Aurora Cape code per person or Microsoft account. Codes are limited (\"supplies are limited\")."
+      ],
+      "editionNotes": {
+        "java": "Equip it in the Minecraft Launcher (Skins tab) or on your minecraft.net profile. If it doesn't show up on Java, log into Bedrock once with the same account.",
+        "bedrock": "Equip it from Dressing Room → Capes in the Character Creator."
+      },
+      "alerts": [
+        "Twitch support reported on Oct 2, 2026 that its Aurora codes are used up. TikTok is the safest way to earn the cape now."
+      ],
+      "notes": [
+        "The Aurora Cape is a Minecraft (Java & Bedrock) cape only. It does not appear in Minecraft Dungeons II itself."
+      ],
+      "links": [
+        {
+          "kind": "stream",
+          "label": "Twitch – Minecraft Dungeons II streams",
+          "url": "https://www.twitch.tv/directory/category/minecraft-dungeons-ii"
+        },
+        {
+          "kind": "stream",
+          "label": "TikTok – Minecraft Dungeons II LIVE",
+          "url": "https://www.tiktok.com/search/live?q=Minecraft%20Dungeons%20II"
+        },
+        {
+          "kind": "stream",
+          "label": "Twitch Drops inventory",
+          "url": "https://www.twitch.tv/drops/inventory"
+        },
+        {
+          "kind": "redeem",
+          "label": "Redeem code – minecraft.net/redeem",
+          "url": "https://www.minecraft.net/en-us/redeem"
+        },
+        {
+          "kind": "info",
+          "label": "Official announcement",
+          "url": "https://www.minecraft.net/en-us/article/minecraft-dungeons-ii-capes-promos"
+        }
+      ],
+      "sources": [
+        "mcnet-mcd2",
+        "mcnet-redeem",
+        "x-aurora",
+        "wiki-aurora"
+      ]
+    },
+    {
+      "id": "hero",
+      "names": {
+        "java": "Hero Cape",
+        "bedrock": "Hero Cape"
+      },
+      "editions": [
+        "java",
+        "bedrock"
+      ],
+      "category": "Limited-time event · Minecraft Dungeons crossover",
+      "texture": "bb384a1079b9a6f2811520c7991b6e8150d02e5a96457e44509e30822f72f38e",
+      "wiki": "Hero_Cape",
+      "appearance": "Red cloth with a golden Redstone Monstrosity face and gold trim along the bottom. The elytra has an embroidered gold pattern in the same colors.",
+      "windows": [
+        {
+          "role": "earn",
+          "label": "Log into Dungeons II",
+          "start": "2026-09-29",
+          "end": "2026-12-31",
+          "dateOnly": true,
+          "exclusiveEnd": true
+        }
+      ],
+      "steps": [
+        "Play the original <b>Minecraft Dungeons</b> on your Microsoft account. You don't need to own the Dungeons Hero Cape.",
+        "Then log into <b>Minecraft Dungeons II</b> on the same Microsoft account <b>before December 31, 2026</b>.",
+        "When Dungeons II shows the cape as equippable, launch <b>Minecraft: Java and/or Bedrock Edition</b> on that same account to unlock it there.",
+        "Use the same Microsoft account in every game, even when you play couch co-op."
+      ],
+      "editionNotes": {
+        "java": "Equip it in the Minecraft Launcher (Skins tab) or on your minecraft.net profile.",
+        "bedrock": "Equip it from Dressing Room → Capes."
+      },
+      "alerts": [
+        "Refunding Minecraft Dungeons II removes this cape from your account."
+      ],
+      "notes": [],
+      "links": [
+        {
+          "kind": "info",
+          "label": "Minecraft Dungeons II",
+          "url": "https://www.minecraft.net/en-us/about-dungeons-ii"
+        },
+        {
+          "kind": "info",
+          "label": "Minecraft Dungeons (original)",
+          "url": "https://www.minecraft.net/en-us/about-dungeons"
+        },
+        {
+          "kind": "info",
+          "label": "Official announcement",
+          "url": "https://www.minecraft.net/en-us/article/minecraft-dungeons-ii-capes-promos"
+        }
+      ],
+      "sources": [
+        "mcnet-mcd2",
+        "bsky-refund",
+        "wiki-hero"
+      ]
+    },
+    {
+      "id": "experience",
+      "names": {
+        "java": "Minecraft Experience Cape",
+        "bedrock": "Villager Rescue Cape"
+      },
+      "editions": [
+        "java",
+        "bedrock"
+      ],
+      "category": "In-person event · Minecraft Experience: Villager Rescue",
+      "texture": "7658c5025c77cfac7574aab3af94a46a8886e3b7722a895255fbf22ab8652434",
+      "wiki": "Minecraft_Experience_Cape",
+      "appearance": "A villager's face on a dark purple background. One half of the face is a zombie villager and the other half is a normal villager.",
+      "locations": [
+        {
+          "city": "Chicago (Rosemont), IL, USA",
+          "venue": "EXP Rosemont, 9900 Berwyn Ave",
+          "start": "2026-05-08",
+          "end": "2026-10-10",
+          "url": "https://www.minecraftexperience.com/chicago/",
+          "tickets": "https://feverup.com/m/588851"
+        },
+        {
+          "city": "Vienna, Austria",
+          "venue": "METAStadt, Dr.-Otto-Neurath-Gasse 3",
+          "start": "2026-10-09",
+          "end": "2027-02-28",
+          "url": "https://www.minecraftexperience.com/villager-rescue-vienna/",
+          "tickets": "https://feverup.com/m/657439"
+        },
+        {
+          "city": "Mexico City, Mexico",
+          "venue": "Fórum Buenavista",
+          "start": "2026-04-15",
+          "end": "2026-11-30",
+          "url": "https://www.minecraftexperience.com/mexicocity/",
+          "tickets": "https://feverup.com/m/575536"
+        },
+        {
+          "city": "East Rutherford, NJ, USA",
+          "venue": "American Dream, 1 American Dream Way",
+          "start": "2026-11-13",
+          "end": "2027-02-28",
+          "url": "https://www.minecraftexperience.com/villager-rescue-americandream/",
+          "tickets": "https://feverup.com/m/771775"
+        },
+        {
+          "city": "Oberhausen, Germany",
+          "venue": "OBEX, Duisburger Straße 375",
+          "start": "2026-05-28",
+          "end": "2027-01-10",
+          "url": "https://www.minecraftexperience.com/villager-rescue-oberhausen/",
+          "tickets": "https://feverup.com/m/595217"
+        },
+        {
+          "city": "Shanghai, China",
+          "venue": "To be announced",
+          "tba": "Autumn 2026 (dates TBA)"
+        },
+        {
+          "city": "Singapore",
+          "venue": "Mandai Wildlife Reserve",
+          "start": "2026-04-24",
+          "end": "2026-09-13"
+        },
+        {
+          "city": "Herning, Denmark",
+          "venue": "MCH Messecenter Herning",
+          "start": "2026-04-01",
+          "end": "2026-08-23"
+        }
+      ],
+      "steps": [
+        "Buy a ticket for an open Villager Rescue location and complete the roughly one-hour experience in person.",
+        "Collect your cape code. Some cities email it after your visit. Others hand you a printed code card when you return your Orb of Interaction at the exit. Cities that use cards don't send emails.",
+        "Redeem the code at <a href=\"https://www.minecraft.net/en-us/redeem\" target=\"_blank\" rel=\"noopener\">minecraft.net/redeem</a>. The cape unlocks on Java and Bedrock.",
+        "Redeem within <b>30 days after the city you visited closes</b>. To be safe, redeem right away."
+      ],
+      "editionNotes": {
+        "java": "On Java it's called the \"Minecraft Experience Cape\". Equip it in the Launcher or on your minecraft.net profile.",
+        "bedrock": "On Bedrock it's called the \"Villager Rescue Cape\". Equip it from Dressing Room → Capes."
+      },
+      "notes": [
+        "Venue dates are local to each city. Hours vary by day, so check the city page before you go."
+      ],
+      "links": [
+        {
+          "kind": "tickets",
+          "label": "All Minecraft Experience locations",
+          "url": "https://www.minecraftexperience.com/"
+        },
+        {
+          "kind": "redeem",
+          "label": "Redeem code – minecraft.net/redeem",
+          "url": "https://www.minecraft.net/en-us/redeem"
+        }
+      ],
+      "sources": [
+        "mce-home",
+        "mcnet-exp-terms",
+        "wiki-experience-cape",
+        "wiki-villager-rescue"
+      ]
+    },
+    {
+      "id": "moonlight",
+      "names": {
+        "java": "Moonlight Trail Cape",
+        "bedrock": "Moonlight Trail Cape"
+      },
+      "editions": [
+        "java",
+        "bedrock"
+      ],
+      "category": "In-person event · Minecraft Experience: Moonlight Trail",
+      "texture": "fe8a02dfe9e390e44ff33d69feef9d3943f76d3901015bbd50f0b67722d288bd",
+      "wiki": "Moonlight_Trail_Cape",
+      "appearance": "A diamond beacon pyramid shooting a beam into a dark-blue, starry night sky with a full moon.",
+      "locations": [
+        {
+          "city": "Santiago, Chile",
+          "venue": "Parque Metropolitano, Av. El Cerro 1905 · nightly 8:00–10:20 PM local",
+          "start": "2026-10-08",
+          "end": "2026-11-30",
+          "url": "https://www.minecraftexperience.com/moonlight-trail-chile/",
+          "tickets": "https://www.ticketmaster.cl/event/minecraft-experience-chile"
+        },
+        {
+          "city": "Buenos Aires, Argentina",
+          "venue": "Ciudad Universitaria",
+          "start": "2026-05-15",
+          "end": "2026-08-09"
+        }
+      ],
+      "steps": [
+        "Buy a ticket and complete the outdoor nighttime Moonlight Trail. It's a trail of about 1 km through Minecraft biomes that ends with restoring a beacon.",
+        "Your cape code is <b>emailed within 72 hours</b> of your visit.",
+        "Redeem the code at <a href=\"https://www.minecraft.net/en-us/redeem\" target=\"_blank\" rel=\"noopener\">minecraft.net/redeem</a>. The cape unlocks on Java and Bedrock.",
+        "Redeem within <b>30 days after the tour city closes</b>."
+      ],
+      "editionNotes": {
+        "java": "Available on Java since May 27, 2026. Equip it in the Launcher or on your minecraft.net profile.",
+        "bedrock": "Equip it from Dressing Room → Capes."
+      },
+      "notes": [
+        "Anyone 16 or younger must be with an adult. Children 2 and under get in free."
+      ],
+      "links": [
+        {
+          "kind": "tickets",
+          "label": "Santiago tickets (Ticketmaster)",
+          "url": "https://www.ticketmaster.cl/event/minecraft-experience-chile"
+        },
+        {
+          "kind": "info",
+          "label": "Moonlight Trail Chile",
+          "url": "https://www.minecraftexperience.com/moonlight-trail-chile/"
+        },
+        {
+          "kind": "redeem",
+          "label": "Redeem code – minecraft.net/redeem",
+          "url": "https://www.minecraft.net/en-us/redeem"
+        }
+      ],
+      "sources": [
+        "mce-home",
+        "ticketmaster-cl",
+        "mcnet-exp-terms",
+        "wiki-moonlight-cape",
+        "wiki-moonlight-trail"
+      ]
+    },
+    {
+      "id": "twisted",
+      "names": {
+        "java": "Twisted Cape",
+        "bedrock": "Twisted Cape"
+      },
+      "editions": [
+        "java",
+        "bedrock"
+      ],
+      "category": "Pre-order bonus · Minecraft Dungeons II",
+      "texture": "24aafc451aa2cc34ddc7265211678585c0ef4da4d32edb75ecec1bd8b5408381",
+      "wiki": "Twisted_Cape",
+      "appearance": "The spinal column of the Twisted Warden. The elytra shows warden bones at the shoulders that fade into a sculk texture ending in hook-like curves.",
+      "windows": [
+        {
+          "role": "earn",
+          "label": "Pre-order Minecraft Dungeons II",
+          "end": "2026-09-29",
+          "dateOnly": true,
+          "exclusiveEnd": true
+        }
+      ],
+      "steps": [
+        "The cape only came with a <b>Minecraft Dungeons II pre-order</b>. You can't get it by buying the game now.",
+        "<b>Already pre-ordered but haven't claimed it?</b> Log into Dungeons II with your Microsoft account and confirm your pre-order items. Then log into Bedrock and/or Java on the same account.",
+        "If you pre-ordered a physical copy, first redeem the code in the box on your console's store (xbox.com/redeem, Nintendo eShop, or PlayStation Store). Then follow the step above."
+      ],
+      "editionNotes": {
+        "java": "Equip it in the Launcher or on your minecraft.net profile.",
+        "bedrock": "Equip it from Dressing Room → Capes."
+      },
+      "alerts": [
+        "Refunding Dungeons II removes the cape, and you can't get it back by buying the game again."
+      ],
+      "notes": [],
+      "links": [
+        {
+          "kind": "info",
+          "label": "Official announcement",
+          "url": "https://www.minecraft.net/en-us/article/minecraft-dungeons-ii-capes-promos"
+        }
+      ],
+      "sources": [
+        "mcnet-mcd2",
+        "bsky-refund",
+        "wiki-twisted"
+      ]
+    },
+    {
+      "id": "pan",
+      "names": {
+        "java": "Pan Cape",
+        "bedrock": "The Pan Cape!"
+      },
+      "editions": [
+        "java",
+        "bedrock"
+      ],
+      "category": "Free for every player",
+      "texture": "28de4a81688ad18b49e735a273e086c18f1e3966956123ccb574034c06f5d336",
+      "wiki": "Pan_Cape",
+      "always": true,
+      "appearance": "A stack of pancakes with butter and syrup on a white plate, set against a light-blue background. When the elytra is closed, it looks like a pancake.",
+      "steps": [
+        "Own Minecraft. Every player gets this cape automatically, and it has no end date.",
+        "Bedrock: every player has it (Bedrock 1.16.0+).",
+        "Java: every player has had it since May 8, 2025, including new buyers. It can take a little while to appear after you buy the game. You don't need to launch Bedrock."
+      ],
+      "editionNotes": {
+        "java": "Called \"Pan Cape\" on Java. Equip it in the Launcher or on your minecraft.net profile.",
+        "bedrock": "Called \"The Pan Cape!\" on Bedrock. Equip it from Dressing Room → Capes."
+      },
+      "notes": [],
+      "links": [],
+      "sources": [
+        "wiki-pan",
+        "wiki-cape"
+      ]
+    },
+    {
+      "id": "builder",
+      "names": {
+        "java": "Builder Cape",
+        "bedrock": "Builder Cape"
+      },
+      "editions": [
+        "java",
+        "bedrock"
+      ],
+      "category": "Limited-time event · TwitchCon 2026 / Movie Build Challenge",
+      "texture": "2c579968c64c1719740fd8c2a451461879b238002574fce48f7d1a7c36a1c7d4",
+      "wiki": "Builder_Cape",
+      "appearance": "An iron pickaxe lying on a crafting table.",
+      "windows": [
+        {
+          "role": "earn",
+          "label": "Watch Twitch/TikTok streams",
+          "start": "2026-05-30",
+          "end": "2026-06-22",
+          "dateOnly": true
+        },
+        {
+          "role": "redeem",
+          "label": "Redeem codes by",
+          "end": "2026-06-30",
+          "dateOnly": true
+        }
+      ],
+      "steps": [
+        "Watch any Twitch stream for 5 minutes or any TikTok live for 3 minutes during the promotion, then redeem the code."
+      ],
+      "links": [],
+      "sources": [
+        "wiki-builder"
+      ]
+    },
+    {
+      "id": "crafter",
+      "names": {
+        "java": "Crafter Cape",
+        "bedrock": "Crafter Cape"
+      },
+      "editions": [
+        "java",
+        "bedrock"
+      ],
+      "category": "In-person event · TwitchCon Rotterdam 2026",
+      "texture": "479eacefa3cdd7aca94207f36c0dd449653ddf259daf40544a5866baf05eee22",
+      "wiki": "Crafter_Cape",
+      "appearance": "An iron pickaxe on a crafting table (mirrored Builder Cape design).",
+      "windows": [
+        {
+          "role": "earn",
+          "label": "TwitchCon Rotterdam",
+          "start": "2026-05-30",
+          "end": "2026-05-31",
+          "dateOnly": true
+        }
+      ],
+      "steps": [
+        "Collect three emerald stickers at TwitchCon Rotterdam and trade them at the Cape Trader booth for a code."
+      ],
+      "links": [],
+      "sources": [
+        "wiki-crafter"
+      ]
+    },
+    {
+      "id": "common",
+      "names": {
+        "java": "Common Cape",
+        "bedrock": "Common Cape"
+      },
+      "editions": [
+        "java",
+        "bedrock"
+      ],
+      "category": "Ownership cape",
+      "texture": "5ec930cdd2629c8771655c60eebeb867b4b6559b0e6d3bc71c40c96347fa03f0",
+      "wiki": "Common_Cape",
+      "appearance": "A grass block: green on top with a brown, speckled dirt base.",
+      "windows": [
+        {
+          "role": "earn",
+          "label": "Log into Bedrock with a Microsoft account",
+          "start": "2025-05-06",
+          "end": "2026-05-05",
+          "dateOnly": true
+        }
+      ],
+      "steps": [
+        "Log into Bedrock Edition with a Microsoft account during the distribution period."
+      ],
+      "links": [],
+      "sources": [
+        "wiki-common"
+      ]
+    },
+    {
+      "id": "zombie-horse",
+      "names": {
+        "java": "Zombie Horse Cape",
+        "bedrock": "Zombie Horse Cape"
+      },
+      "editions": [
+        "java",
+        "bedrock"
+      ],
+      "category": "Limited-time event · Mounts of Mayhem",
+      "texture": "a3f6e4f14801f3ea55e3d95b9b4ef3b5e8802d947f669de93d6ec4b9354a436b",
+      "wiki": "Zombie_Horse_Cape",
+      "appearance": "The pelt of a zombie horse with partially exposed bones.",
+      "windows": [
+        {
+          "role": "earn",
+          "label": "Spear Mayhem challenge",
+          "start": "2025-12-12T16:00:00Z",
+          "end": "2025-12-15T18:00:00Z"
+        }
+      ],
+      "steps": [
+        "Defeat 5 mobs with a spear in Survival on Bedrock during the challenge."
+      ],
+      "links": [],
+      "sources": [
+        "wiki-zombie-horse"
+      ]
+    },
+    {
+      "id": "copper",
+      "names": {
+        "java": "Copper Cape",
+        "bedrock": "Copper Cape"
+      },
+      "editions": [
+        "java",
+        "bedrock"
+      ],
+      "category": "Limited-time event · The Copper Age",
+      "texture": "5e6f3193e74cd16cdd6637d9bae5484e3a37ff2a14c2d157c659a07810b1bdca",
+      "wiki": "Copper_Cape",
+      "appearance": "A chiseled-copper pattern that oxidizes from top to bottom.",
+      "windows": [
+        {
+          "role": "earn",
+          "label": "Copper Cape Quest",
+          "start": "2025-10-13T15:00:00Z",
+          "end": "2025-10-20T17:00:00Z"
+        }
+      ],
+      "steps": [
+        "Place a copper golem statue on Bedrock, or watch a rewards-enabled stream during the quest."
+      ],
+      "links": [],
+      "sources": [
+        "wiki-copper"
+      ]
+    }
+  ],
+  "watchLinks": [
+    {
+      "label": "Minecraft on Twitch",
+      "url": "https://www.twitch.tv/minecraft"
+    },
+    {
+      "label": "Minecraft on YouTube",
+      "url": "https://www.youtube.com/minecraft"
+    },
+    {
+      "label": "Minecraft on TikTok",
+      "url": "https://www.tiktok.com/@minecraft"
+    },
+    {
+      "label": "Twitch Drops inventory",
+      "url": "https://www.twitch.tv/drops/inventory"
+    },
+    {
+      "label": "Redeem a code",
+      "url": "https://www.minecraft.net/en-us/redeem"
+    },
+    {
+      "label": "Minecraft.net news",
+      "url": "https://www.minecraft.net/en-us/articles"
+    }
+  ]
+}

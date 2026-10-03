@@ -1,0 +1,25 @@
+services:
+  web:
+    image: nginx:1.27-alpine
+    container_name: cape-tracker-web
+    restart: unless-stopped
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    volumes:
+      - ./site:/usr/share/nginx/html:ro
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+
+  updater:
+    build: ./docker/updater
+    container_name: cape-tracker-updater
+    restart: unless-stopped
+    # Run as your Pi user so files written into the repo stay yours (check with: id -u / id -g)
+    user: "${PUID:-1000}:${PGID:-1000}"
+    environment:
+      HOME: /tmp
+      TZ: ${TZ:-America/Chicago}
+      UPDATE_TIME: ${UPDATE_TIME:-05:00}
+      GIT_PULL: ${GIT_PULL:-0}
+    volumes:
+      - ./:/repo
+    command: ["python3", "/repo/updater/update.py", "--loop"]

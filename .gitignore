@@ -1,0 +1,5 @@
+.env
+site/data/status.json
+site/data/*.tmp
+site/textures/*.png
+__pycache__/
