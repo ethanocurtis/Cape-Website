@@ -17,6 +17,7 @@
         All times are in <strong>US Central Time</strong> (<span id="tz-abbr">CST/CDT</span>).
         <span class="dot">·</span> Last checked: <span id="last-checked">—</span>
       </p>
+      <p class="header-actions"><button type="button" class="btn" id="alerts-open">Get Discord alerts</button></p>
     </div>
   </header>
 
@@ -53,6 +54,51 @@
       <p>A fan-made tracker. Not affiliated with Mojang Studios or Microsoft. Cape textures are loaded from Mojang's texture server.</p>
     </div>
   </footer>
+
+  <dialog id="alerts-dialog" aria-labelledby="alerts-title">
+    <form id="alerts-form" method="dialog" novalidate>
+      <div class="dlg-head">
+        <h2 id="alerts-title">Discord alerts</h2>
+        <button type="button" class="icon-btn" id="alerts-close" aria-label="Close">×</button>
+      </div>
+      <p class="muted small">Get a message in your Discord server when capes are added, open, or are about to end.</p>
+
+      <label for="hook-url" class="field-label">Webhook URL</label>
+      <input id="hook-url" name="url" type="url" inputmode="url" autocomplete="off" spellcheck="false"
+             placeholder="https://discord.com/api/webhooks/…" required>
+      <details class="how">
+        <summary>How do I get a webhook URL?</summary>
+        <ol>
+          <li>In Discord, open <b>Server Settings → Integrations → Webhooks</b>. You need the Manage Webhooks permission.</li>
+          <li>Click <b>New Webhook</b> and pick the channel for alerts.</li>
+          <li>Click <b>Copy Webhook URL</b> and paste it above.</li>
+        </ol>
+        <p>Keep the URL private: anyone who has it can post in that channel.</p>
+      </details>
+
+      <fieldset>
+        <legend>Alert me when</legend>
+        <label class="check"><input type="checkbox" name="events" value="new" checked> A new cape is added</label>
+        <label class="check"><input type="checkbox" name="events" value="open" checked> A cape opens (including new event cities)</label>
+        <label class="check"><input type="checkbox" name="events" value="closing" checked> A cape or code deadline ends within 24 hours</label>
+        <label class="check"><input type="checkbox" name="events" value="changed" checked> Dates change or a new warning is posted</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Editions</legend>
+        <label class="check"><input type="checkbox" name="editions" value="java" checked> Java Edition</label>
+        <label class="check"><input type="checkbox" name="editions" value="bedrock" checked> Bedrock Edition</label>
+      </fieldset>
+
+      <p id="alerts-msg" class="form-msg" role="status" hidden></p>
+
+      <div class="dlg-actions">
+        <button type="submit" class="btn" id="alerts-submit">Subscribe</button>
+        <button type="button" class="btn ghost" id="alerts-unsub">Unsubscribe</button>
+      </div>
+      <p class="muted small">Already subscribed? Submit the same URL again to change your options.</p>
+    </form>
+  </dialog>
 
   <script src="assets/app.js"></script>
 </body>

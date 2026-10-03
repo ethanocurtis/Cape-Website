@@ -388,6 +388,56 @@
     b.addEventListener("click", function () { setEdition(b.dataset.edition, true); });
   });
 
+  // ---------- Discord alerts ----------
+
+  (function () {
+    var dlg = document.getElementById("alerts-dialog");
+    var form = document.getElementById("alerts-form");
+    var msg = document.getElementById("alerts-msg");
+    var buttons = form.querySelectorAll(".dlg-actions .btn");
+    var HOOK = /^https:\/\/((ptb|canary)\.)?discord(app)?\.com\/api(\/v\d+)?\/webhooks\/\d+\/[\w-]+\/?$/;
+
+    function show(text, ok) {
+      msg.hidden = false;
+      msg.className = "form-msg " + (ok ? "ok" : "err");
+      msg.textContent = text;
+    }
+    function checked(name) {
+      return Array.prototype.map.call(form.querySelectorAll('input[name="' + name + '"]:checked'), function (i) { return i.value; });
+    }
+    function send(path, body) {
+      var url = form.url.value.trim();
+      if (!HOOK.test(url)) { show("That doesn't look like a Discord webhook URL. It should start with https://discord.com/api/webhooks/", false); return; }
+      body.url = url;
+      buttons.forEach(function (b) { b.disabled = true; });
+      show("Contacting Discord…", true);
+      fetch(path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
+        .then(function (r) {
+          return r.json().catch(function () {
+            return { ok: false, message: r.status === 429 ? "Too many tries. Wait a minute and try again." : "Alerts aren't available right now." };
+          });
+        })
+        .then(function (res) { show(res.message, res.ok); })
+        .catch(function () { show("Couldn't reach the server. Check your connection and try again.", false); })
+        .then(function () { buttons.forEach(function (b) { b.disabled = false; }); });
+    }
+
+    document.getElementById("alerts-open").addEventListener("click", function () {
+      msg.hidden = true;
+      dlg.showModal();
+    });
+    document.getElementById("alerts-close").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var events = checked("events"), editions = checked("editions");
+      if (!events.length) return show("Pick at least one kind of alert.", false);
+      if (!editions.length) return show("Pick at least one edition.", false);
+      send("api/subscribe", { events: events, editions: editions });
+    });
+    document.getElementById("alerts-unsub").addEventListener("click", function () { send("api/unsubscribe", {}); });
+  })();
+
   Promise.all([getJSON("data/capes.json"), getJSON("data/status.json").catch(function () { return null; })])
     .then(function (res) {
       state.data = res[0];

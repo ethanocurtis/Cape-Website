@@ -8,6 +8,8 @@ services:
     volumes:
       - ./site:/usr/share/nginx/html:ro
       - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - notifier
 
   updater:
     build: ./docker/updater
@@ -24,3 +26,18 @@ services:
     volumes:
       - ./:/repo
     command: ["python3", "/repo/updater/update.py", "--loop"]
+
+  notifier:
+    build: ./docker/notifier
+    container_name: cape-tracker-notifier
+    restart: unless-stopped
+    environment:
+      TZ: ${TZ:-America/Chicago}
+      SITE_URL: ${SITE_URL:-}
+    volumes:
+      - ./:/repo:ro
+      - notifier-data:/data   # webhook subscriptions: secrets, kept out of the repo and site/
+    command: ["python3", "/repo/notifier/notifier.py"]
+
+volumes:
+  notifier-data:

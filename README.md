@@ -33,6 +33,7 @@ The site is now at `http://<pi-ip>:8080`.
 |-----------|--------------|
 | `web`     | `nginx:alpine`. Serves `./site` read-only on `WEB_PORT` (default 8080). |
 | `updater` | `python:3.12-alpine`. Runs `updater/update.py` at startup, then every day at `UPDATE_TIME` (default 05:00 America/Chicago). |
+| `notifier` | `python:3.12-alpine`. Serves the Discord alert sign-up API at `/api/` (through `web`) and sends alerts. See [Discord alerts](#discord-alerts). |
 
 Useful commands:
 
@@ -64,6 +65,26 @@ Notes:
 - The Pi only fast-forwards. If you edit files on the Pi and commit them there, the pull is skipped and the error appears in `docker compose logs updater`. Make edits on GitHub instead, or run `git reset --hard origin/main` on the Pi.
 - Changes to `docker-compose.yml` or `docker/` need a manual `docker compose up -d --build` on the Pi.
 - Set `GIT_PULL=0` in `.env` to turn off automatic pulls.
+
+## Discord alerts
+
+Visitors click **Get Discord alerts**, paste a Discord channel webhook URL, and choose what they want:
+
+| Alert | When it's sent |
+|-------|----------------|
+| New cape | A cape that can be earned now or soon is added to `capes.json`. |
+| Cape opens | An earn window starts, or a Minecraft Experience city opens. |
+| Ending soon | About 24 hours before a cape can no longer be earned, or before a code-redemption deadline. |
+| Dates changed | A date moves, a venue city is added, or a new warning (e.g. "codes ran out") is posted. |
+
+They can also pick Java, Bedrock or both. On subscribe, the notifier posts a test message, so a wrong URL fails right away. Submitting the same URL again changes the options, and **Unsubscribe** removes it. If someone deletes the webhook in Discord, it is removed automatically on the next alert.
+
+- The notifier re-reads `capes.json` every 5 minutes, so alerts go out shortly after the Pi pulls the daily update. On its first start it only records the current state and sends nothing.
+- Discord timestamps show in each reader's own time zone.
+- Set `SITE_URL` in `.env` to your public address so alerts link to the cape on the site.
+- Subscriptions are stored in the `notifier-data` Docker volume, not in the repo or under `site/`, because webhook URLs let anyone post to that channel.
+- Limits: 10 API requests a minute per visitor (nginx), 5 new webhooks a day per IP, and 2,000 subscriptions in total (`MAX_SUBSCRIPTIONS`).
+- Logs: `docker compose logs -f notifier`. Changes to `notifier/notifier.py` pulled from GitHub are picked up automatically within 5 minutes.
 
 ## Editing `capes.json`
 
