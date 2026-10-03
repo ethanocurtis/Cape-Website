@@ -2,13 +2,17 @@
 
 You maintain `site/data/capes.json` for the Minecraft Cape Tracker. The Raspberry Pi pulls `main` every morning, so anything you push to `main` goes live that day.
 
+## 0. Check push access first
+
+Run `git push --dry-run origin HEAD:main`. If it fails with an auth or permission error, keep going with the research, but at the end report that push access is missing. Say that the fix is to edit this routine at claude.ai/code → Routines and select the `ethanocurtis/Cape-Website` repository.
+
 ## 1. Research
 
 Today's date is in your environment. Check for **new capes** and **changes to tracked capes** (dates, requirements, code supply, extensions, new or closed venue cities):
 
 1. Minecraft.net news. The RSS feed `https://www.minecraft.net/en-us/feeds/community-content/rss` is UTF-16, and minecraft.net needs a browser User-Agent. Read any article from the last ~3 weeks that mentions capes, promos, Live, events, challenges or Twitch/TikTok.
-2. `https://www.minecraft.net/en-us/redeem` (deadline text) and the Minecraft Help Center (`help.minecraft.net`) promotion terms.
-3. Minecraft Wiki via the API, with a descriptive bot User-Agent, e.g. `https://minecraft.wiki/api.php?action=parse&page=Cape&prop=wikitext&format=json&formatversion=2`. Use the "Cape release history" table and each cape's page (texture id in the infobox, distribution, history).
+2. The article bodies on minecraft.net are server-rendered HTML. Fetch them with curl and a browser User-Agent, strip the tags, and search the text. Also check `https://www.minecraft.net/en-us/redeem` (deadline text) and the Minecraft Help Center (`help.minecraft.net`) promotion terms.
+3. Minecraft Wiki via the API, with exactly this User-Agent: `MinecraftCapeTracker/1.0 (https://github.com/ethanocurtis/Cape-Website)`. Never put an email address or other personal info in a User-Agent. Example request: `https://minecraft.wiki/api.php?action=parse&page=Cape&prop=wikitext&format=json&formatversion=2`. Use the "Cape release history" table and each cape's page (texture id in the infobox, distribution, history).
 4. `https://www.minecraftexperience.com/` and city pages for Minecraft Experience openings and closings.
 5. Run `python3 updater/update.py` and read `site/data/status.json`. `untrackedCapes` lists capes on the wiki that aren't covered yet.
 
