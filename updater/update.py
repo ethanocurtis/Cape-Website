@@ -2,6 +2,8 @@
 """Daily refresh for the Minecraft Cape Tracker.
 
 Standard library only. Each run:
+  * fast-forwards the checkout to GitHub main (GIT_PULL=1, the default), so
+    cape data pushed there goes live without touching the Pi,
   * reads the Minecraft.net news RSS feed and flags articles that mention capes,
   * reads the Minecraft Wiki "Cape" release table and reports capes that
     site/data/capes.json does not track yet,
@@ -170,26 +172,51 @@ def cache_textures(capes, errors):
 
 # ---------------------------------------------------------------- main
 
-def git_pull(errors):
-    """Pull curated data updates (capes.json) when GIT_PULL=1 and the repo is mounted."""
-    if os.environ.get("GIT_PULL", "0").lower() not in ("1", "true", "yes"):
-        return
+def git(*args, timeout=120):
     import subprocess
+    return subprocess.run(
+        ["git", "-c", f"safe.directory={ROOT}", "-C", ROOT, *args],
+        capture_output=True, text=True, timeout=timeout,
+    )
+
+
+def git_pull(errors):
+    """Fast-forward the local checkout to GitHub (GIT_REPO_URL @ GIT_BRANCH) when GIT_PULL=1.
+
+    Uses HTTPS so it works inside the container without SSH keys, whatever URL
+    the repo was cloned with. Returns True if updater/update.py itself changed.
+    """
+    if os.environ.get("GIT_PULL", "1").lower() not in ("1", "true", "yes"):
+        return False
+    url = os.environ.get("GIT_REPO_URL", "https://github.com/ethanocurtis/Cape-Website.git")
+    branch = os.environ.get("GIT_BRANCH", "main")
     try:
-        out = subprocess.run(
-            ["git", "-c", f"safe.directory={ROOT}", "-C", ROOT, "pull", "--ff-only"],
-            capture_output=True, text=True, timeout=120,
-        )
-        log("git pull: " + (out.stdout.strip() or out.stderr.strip()))
-        if out.returncode != 0:
-            errors.append("git pull failed: " + out.stderr.strip()[:300])
+        before = git("rev-parse", "HEAD").stdout.strip()
+        fetch = git("fetch", "--quiet", url, branch)
+        if fetch.returncode != 0:
+            errors.append("git fetch failed: " + fetch.stderr.strip()[:300])
+            return False
+        merge = git("merge", "--ff-only", "FETCH_HEAD")
+        if merge.returncode != 0:
+            errors.append("git fast-forward failed (local changes or diverged branch?): " + merge.stderr.strip()[:300])
+            return False
+        after = git("rev-parse", "HEAD").stdout.strip()
+        if before == after:
+            log(f"git: already up to date with {branch} ({after[:7]})")
+            return False
+        changed = git("diff", "--name-only", before, after).stdout.split()
+        log(f"git: updated {before[:7]} -> {after[:7]}: {', '.join(changed)}")
+        return "updater/update.py" in changed
     except Exception as e:  # noqa: BLE001
         errors.append(f"git pull: {e}")
+        return False
 
 
 def run_once():
     errors = []
-    git_pull(errors)
+    if git_pull(errors):
+        log("updater code changed; restarting with the new version")
+        os.execv(sys.executable, [sys.executable, *sys.argv])
     with open(CAPES_JSON) as f:
         catalog = json.load(f)
     capes = catalog["capes"]

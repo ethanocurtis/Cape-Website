@@ -7,7 +7,7 @@ A clean, single-page site that lists every Minecraft cape you can **still earn**
 - **All times in US Central:** shown as CST or CDT, whichever is in effect.
 - **Auto-filtering:** a cape moves to *Recently closed* when it ends. It disappears 2 months after closing. Status is calculated from the dates in the data each time the page loads, so it is always current.
 - **Sources:** every cape card has numbered citations to a source list. Minecraft.net wins when sources give different times.
-- **Daily refresh:** an updater container runs once a day. It checks Minecraft.net news for cape mentions, flags new capes listed on the Minecraft Wiki, caches cape textures locally, and can `git pull` updated cape data.
+- **Daily refresh:** a cloud routine researches capes and pushes updates to GitHub every day. The Pi pulls them automatically, checks Minecraft.net news for cape mentions, flags new capes listed on the Minecraft Wiki, and caches cape textures locally.
 
 ## Run it on a Raspberry Pi (Docker Compose)
 
@@ -19,8 +19,8 @@ curl -fsSL https://get.docker.com | sh
 sudo usermod -aG docker $USER   # log out and back in afterwards
 
 # 2. Get the code
-git clone https://github.com/ethanocurtis/cape-website.git
-cd cape-website
+git clone https://github.com/ethanocurtis/Cape-Website.git
+cd Cape-Website
 cp .env.example .env            # edit the port, time zone or update time if you like
 
 # 3. Start it
@@ -54,14 +54,16 @@ The Pi only needs to expose plain HTTP on your LAN. NPM handles the public domai
 
 Give the Pi a DHCP reservation so the forward IP doesn't change. If NPM's VM and the Pi are on different VLANs, allow TCP 8080 from the NPM VM to the Pi.
 
-### Keeping the cape data current
+### How it stays up to date
 
-`site/data/capes.json` is the hand-checked list of capes, dates and steps. To have the Pi pick up edits pushed to GitHub automatically, set `GIT_PULL=1` in `.env`. The updater then runs `git pull --ff-only` before each daily refresh.
+1. **Research (cloud, daily ~3:47 AM Central):** a scheduled Claude routine checks Minecraft.net, the Minecraft Help Center, minecraftexperience.com and the Minecraft Wiki for new capes and changed dates. It updates `site/data/capes.json` and pushes the changes straight to `main`. Your computer does not need to be on.
+2. **Deploy (Pi, daily at `UPDATE_TIME`, default 5:00 AM Central):** the updater container fast-forwards the checkout to GitHub `main` over HTTPS. Because the repo is public, no keys are needed. Changes to `site/` go live immediately because nginx serves the folder directly. If `updater/update.py` itself changed, the updater restarts with the new version.
+3. **Checks (Pi, same run):** it reads Minecraft.net news and the wiki's cape list. A cape that `capes.json` doesn't cover yet gets a **"New cape spotted"** banner until the next research run adds it.
 
-- **Public repo:** works as-is.
-- **Private repo:** the container has no GitHub credentials. Leave `GIT_PULL=0` and pull from the Pi itself with a cron job (`crontab -e`): `55 4 * * * cd ~/cape-website && git pull --ff-only`. Your normal SSH key or a read-only [deploy key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys) works for this.
-
-When the updater spots a cape that `capes.json` doesn't cover yet, the site shows a **"New cape spotted"** banner that links to the wiki. Add the cape to `capes` (or to `reviewedWikiCapes` if it shouldn't be listed) and the banner clears on the next run.
+Notes:
+- The Pi only fast-forwards. If you edit files on the Pi and commit them there, the pull is skipped and the error appears in `docker compose logs updater`. Make edits on GitHub instead, or run `git reset --hard origin/main` on the Pi.
+- Changes to `docker-compose.yml` or `docker/` need a manual `docker compose up -d --build` on the Pi.
+- Set `GIT_PULL=0` in `.env` to turn off automatic pulls.
 
 ## Editing `capes.json`
 

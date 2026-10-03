@@ -19,7 +19,8 @@ services:
       HOME: /tmp
       TZ: ${TZ:-America/Chicago}
       UPDATE_TIME: ${UPDATE_TIME:-05:00}
-      GIT_PULL: ${GIT_PULL:-0}
+      GIT_PULL: ${GIT_PULL:-1}
+      GIT_BRANCH: ${GIT_BRANCH:-main}
     volumes:
       - ./:/repo
     command: ["python3", "/repo/updater/update.py", "--loop"]
