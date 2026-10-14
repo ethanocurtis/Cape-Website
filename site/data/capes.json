@@ -1,5 +1,5 @@
 {
-  "curatedOn": "2026-10-03",
+  "curatedOn": "2026-10-14",
   "hideAfterMonths": 2,
   "reviewedWikiCapes": [
     "Classic Mojang Cape",
@@ -329,6 +329,12 @@
           "end": "2027-01-10",
           "url": "https://www.minecraftexperience.com/villager-rescue-oberhausen/",
           "tickets": "https://feverup.com/m/595217"
+        },
+        {
+          "city": "Atlanta, GA, USA",
+          "venue": "Pullman Yards, 225 Rogers Street NE",
+          "tba": "TBA (waitlist open)",
+          "url": "https://www.minecraftexperience.com/villager-rescue-atlanta/"
         },
         {
           "city": "Shanghai, China",
