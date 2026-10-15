@@ -1,5 +1,5 @@
 {
-  "curatedOn": "2026-10-14",
+  "curatedOn": "2026-10-15",
   "hideAfterMonths": 2,
   "reviewedWikiCapes": [
     "Classic Mojang Cape",
@@ -132,6 +132,12 @@
       "title": "Pan Cape",
       "publisher": "Minecraft Wiki",
       "url": "https://minecraft.wiki/w/Pan_Cape"
+    },
+    "fever-atlanta": {
+      "title": "Minecraft Experience: Villager Rescue – Atlanta",
+      "publisher": "Fever",
+      "date": "2026-10-15",
+      "url": "https://feverup.com/m/770433/"
     }
   },
   "capes": [
@@ -333,8 +339,9 @@
         {
           "city": "Atlanta, GA, USA",
           "venue": "Pullman Yards, 225 Rogers Street NE",
-          "tba": "TBA (waitlist open)",
-          "url": "https://www.minecraftexperience.com/villager-rescue-atlanta/"
+          "tba": "Opens Nov 20, 2026 (end date TBA)",
+          "url": "https://www.minecraftexperience.com/villager-rescue-atlanta/",
+          "tickets": "https://feverup.com/m/770433/"
         },
         {
           "city": "Shanghai, China",
@@ -383,7 +390,8 @@
         "mce-home",
         "mcnet-exp-terms",
         "wiki-experience-cape",
-        "wiki-villager-rescue"
+        "wiki-villager-rescue",
+        "fever-atlanta"
       ]
     },
     {
