@@ -1,5 +1,5 @@
 {
-  "curatedOn": "2026-10-15",
+  "curatedOn": "2026-10-20",
   "hideAfterMonths": 2,
   "reviewedWikiCapes": [
     "Classic Mojang Cape",
@@ -138,6 +138,12 @@
       "publisher": "Fever",
       "date": "2026-10-15",
       "url": "https://feverup.com/m/770433/"
+    },
+    "damai-shanghai": {
+      "title": "《我的世界-实境探险》Shanghai – tickets",
+      "publisher": "Damai (大麦网)",
+      "date": "2026-10-20",
+      "url": "https://detail.damai.cn/item.htm?id=1090237542954"
     }
   },
   "capes": [
@@ -344,11 +350,6 @@
           "tickets": "https://feverup.com/m/770433/"
         },
         {
-          "city": "Shanghai, China",
-          "venue": "To be announced",
-          "tba": "Autumn 2026 (dates TBA)"
-        },
-        {
           "city": "Singapore",
           "venue": "Mandai Wildlife Reserve",
           "start": "2026-04-24",
@@ -372,7 +373,8 @@
         "bedrock": "On Bedrock it's called the \"Villager Rescue Cape\". Equip it from Dressing Room → Capes."
       },
       "notes": [
-        "Venue dates are local to each city. Hours vary by day, so check the city page before you go."
+        "Venue dates are local to each city. Hours vary by day, so check the city page before you go.",
+        "The Shanghai event (Nov 10, 2026 – Mar 1, 2027) does not give out the cape."
       ],
       "links": [
         {
@@ -391,7 +393,8 @@
         "mcnet-exp-terms",
         "wiki-experience-cape",
         "wiki-villager-rescue",
-        "fever-atlanta"
+        "fever-atlanta",
+        "damai-shanghai"
       ]
     },
     {
