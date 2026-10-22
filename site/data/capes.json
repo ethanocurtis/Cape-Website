@@ -1,5 +1,5 @@
 {
-  "curatedOn": "2026-10-20",
+  "curatedOn": "2026-10-22",
   "hideAfterMonths": 2,
   "reviewedWikiCapes": [
     "Classic Mojang Cape",
@@ -136,7 +136,7 @@
     "fever-atlanta": {
       "title": "Minecraft Experience: Villager Rescue – Atlanta",
       "publisher": "Fever",
-      "date": "2026-10-15",
+      "date": "2026-10-22",
       "url": "https://feverup.com/m/770433/"
     },
     "damai-shanghai": {
@@ -345,7 +345,8 @@
         {
           "city": "Atlanta, GA, USA",
           "venue": "Pullman Yards, 225 Rogers Street NE",
-          "tba": "Opens Nov 20, 2026 (end date TBA)",
+          "start": "2026-11-20",
+          "end": "2027-01-31",
           "url": "https://www.minecraftexperience.com/villager-rescue-atlanta/",
           "tickets": "https://feverup.com/m/770433/"
         },
