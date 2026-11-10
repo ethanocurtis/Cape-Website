@@ -1,5 +1,5 @@
 {
-  "curatedOn": "2026-10-22",
+  "curatedOn": "2026-11-10",
   "hideAfterMonths": 2,
   "reviewedWikiCapes": [
     "Classic Mojang Cape",
@@ -349,6 +349,13 @@
           "end": "2027-01-31",
           "url": "https://www.minecraftexperience.com/villager-rescue-atlanta/",
           "tickets": "https://feverup.com/m/770433/"
+        },
+        {
+          "city": "Sydney, Australia",
+          "venue": "Luna Park Sydney, 1 Olympic Drive, Milsons Point",
+          "tba": "TBA (bookings open)",
+          "url": "https://www.minecraftexperience.com/villager-rescue-sydney/",
+          "tickets": "https://premier.ticketek.com.au/shows/show.aspx?sh=MINEEXP27"
         },
         {
           "city": "Singapore",
