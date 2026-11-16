@@ -1,5 +1,5 @@
 {
-  "curatedOn": "2026-11-10",
+  "curatedOn": "2026-11-16",
   "hideAfterMonths": 2,
   "reviewedWikiCapes": [
     "Classic Mojang Cape",
@@ -47,7 +47,8 @@
     "Builder Cape",
     "Aurora Cape",
     "Hero Cape",
-    "Twisted Cape"
+    "Twisted Cape",
+    "Snow Golem Cape"
   ],
   "sources": {
     "mcnet-mcd2": {
@@ -144,6 +145,17 @@
       "publisher": "Damai (大麦网)",
       "date": "2026-10-20",
       "url": "https://detail.damai.cn/item.htm?id=1090237542954"
+    },
+    "mcnet-humblers": {
+      "title": "The Humblers Awaken",
+      "publisher": "Minecraft.net",
+      "date": "2026-11-15",
+      "url": "https://www.minecraft.net/en-us/article/the-humblers-awaken"
+    },
+    "wiki-snow-golem": {
+      "title": "Snow Golem Cape",
+      "publisher": "Minecraft Wiki",
+      "url": "https://minecraft.wiki/w/Snow_Golem_Cape"
     }
   },
   "capes": [
@@ -288,6 +300,59 @@
       ]
     },
     {
+      "id": "snow-golem",
+      "names": {
+        "java": "Snow Golem Cape",
+        "bedrock": "Snow Golem Cape"
+      },
+      "editions": [
+        "java",
+        "bedrock"
+      ],
+      "category": "Limited-time promotion · Minecraft Dungeons II: The Humblers Awaken",
+      "texture": "",
+      "wiki": "Snow_Golem_Cape",
+      "appearance": "A snowy white cape with the face of a sheared snow golem on the upper half and two dark buttons below it.",
+      "windows": [
+        {
+          "role": "earn",
+          "label": "Enter the promo code in Dungeons II",
+          "start": "2026-12-01",
+          "dateOnly": true
+        }
+      ],
+      "steps": [
+        "On <b>December 1, 2026</b>, when <i>The Humblers Awaken</i> DLC releases, Mojang will share a special promo code on its social media channels.",
+        "Enter that code in <b>Minecraft Dungeons II</b> on your Microsoft account.",
+        "Then launch <b>Minecraft: Java and/or Bedrock Edition</b> on the same Microsoft account to unlock the cape there."
+      ],
+      "editionNotes": {
+        "java": "Equip it in the Minecraft Launcher (Skins tab) or on your minecraft.net profile.",
+        "bedrock": "Equip it from Dressing Room → Capes."
+      },
+      "alerts": [],
+      "notes": [
+        "The promo code and how long it works haven't been announced yet (TBA).",
+        "You need Minecraft Dungeons II to enter the code."
+      ],
+      "links": [
+        {
+          "kind": "info",
+          "label": "Official announcement",
+          "url": "https://www.minecraft.net/en-us/article/the-humblers-awaken"
+        },
+        {
+          "kind": "info",
+          "label": "Minecraft on X",
+          "url": "https://x.com/Minecraft"
+        }
+      ],
+      "sources": [
+        "mcnet-humblers",
+        "wiki-snow-golem"
+      ]
+    },
+    {
       "id": "experience",
       "names": {
         "java": "Minecraft Experience Cape",
@@ -353,7 +418,8 @@
         {
           "city": "Sydney, Australia",
           "venue": "Luna Park Sydney, 1 Olympic Drive, Milsons Point",
-          "tba": "TBA (bookings open)",
+          "start": "2026-12-18",
+          "end": "2027-04-25",
           "url": "https://www.minecraftexperience.com/villager-rescue-sydney/",
           "tickets": "https://premier.ticketek.com.au/shows/show.aspx?sh=MINEEXP27"
         },
